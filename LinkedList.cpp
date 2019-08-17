@@ -200,7 +200,7 @@ int main()
 	int ch = 0, num, pos;
 	do {
 	     cout<<"MENU"<<endl;
-	     cout<<"1. Insert from start \n2. Insert from end \n3. Insert at Position \n4. Delete from start \n5. Delete from end \n6. Delete from position \n7. Display List \n8. Display Size of List \n9. Delete List  \n10. Get value at a position \n11. Exit \n"<<endl;
+	     cout<<"1. Insert at the start \n2. Insert at the end \n3. Insert at Position \n4. Delete from the start \n5. Delete from the end \n6. Delete from position \n7. Display List \n8. Display Size of List \n9. Delete List  \n10. Get value at a position \n11. Exit \n"<<endl;
 
 	     cout<< "Enter your choice : ";
 	     cin>>ch;
