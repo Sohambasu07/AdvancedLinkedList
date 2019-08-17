@@ -6,7 +6,16 @@
  */
 #include <bits/stdc++.h>
 using namespace std;
-
+/*class Node
+{
+public:
+	int data; Node next; Node prev;
+	Node{
+		data = 0;
+		next = NULL;
+		prev = NULL;
+	}
+};*/
 struct Node{
 	int data;
 	Node *next;
@@ -84,8 +93,8 @@ public:
 	}
 	void insert_pos(int val, int p)
 	{
-		Node *temp = new Node();
-		Node *cur = new Node();
+		Node *temp = start;
+		Node *cur = new Node;
 		temp = start;
 		int pos = 0;
 		if(p > size)
@@ -102,10 +111,10 @@ public:
 				temp = temp->next;
 				pos++;
 			}
-			cout<<"temp"<<temp->data<<endl;
 			cur->data = val;
 			cur->prev = temp;
 			cur->next = temp->next;
+			temp->next->prev = cur;
 			temp->next = cur;
 			cout<<val<<" inserted at position "<<p<<endl;
 			size++;
@@ -147,9 +156,7 @@ public:
 	}
 	void delete_pos(int p)
 	{
-		Node *temp = new Node;
-		Node *cur = new Node;
-		temp = start;
+		Node *temp = start;
 		int pos = 0;
 		if(start == NULL)
 			cout<<"Underflow! List is empty"<<endl;
@@ -168,9 +175,11 @@ public:
 				pos++;
 			}
 			cout<<temp->data<<" has been deleted from position "<<p<<endl;
-			cur = temp->prev;
-			cur->next=temp->next;
-			temp->next = temp->prev = NULL;
+			if(temp->next != NULL)
+				temp->next->prev = temp->prev;
+			if(temp->prev != NULL)
+				temp->prev->next = temp->next;
+			delete temp;
 			size--;
 		}
 	}
