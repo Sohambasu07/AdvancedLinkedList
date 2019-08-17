@@ -207,7 +207,7 @@ int main()
 	int ch = 0, num, pos;
 	do {
 	     cout<<"MENU"<<endl;
-	     cout<<"1. Insert from start \n2. Insert from end \n3. Insert at Position \n4. Delete from start \n5. Delete from end \n6. Delete from position \n7. Display List \n8. Display Size of List \n9. Delete List  \n10. Exit \n"<<endl;
+	     cout<<"1. Insert from start \n2. Insert from end \n3. Insert at Position \n4. Delete from start \n5. Delete from end \n6. Delete from position \n7. Display List \n8. Display Size of List \n9. Delete List  \n10. Get value at a position \n11. Exit \n"<<endl;
 
 	     cout<< "Enter your choice : ";
 	     cin>>ch;
@@ -242,11 +242,15 @@ int main()
 	         case 9: cout<<"List has been deleted!"<<endl;
 	         	 	 ob.start = ob.end = NULL; ob.size = 0;
 	         break;
-	         case 10: cout<<"Exiting.."<<endl;
+	         case 10: cout<<"Enter position to retrieve value"<<endl;
+	         	 	  cin>>pos;
+	         	 	  pos = ob.getVal(pos);
+	         break;
+	         case 11: cout<<"Exiting.."<<endl;
 	         break;
 	         default: cout<<"Enter a Valid Choice"<<endl;
 	      }
 	     }
-	     while(ch!=10);
+	     while(ch!=11);
 		return 0;
 }
