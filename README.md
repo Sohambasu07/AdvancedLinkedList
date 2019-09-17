@@ -1,4 +1,4 @@
-# AdvancedLinkedList
+# Advanced LinkedLists
 Repository Name: Advanced Linked Lists
 
 Description: This repository contains advanced functions/operation on a Linked List (Double Ended)
